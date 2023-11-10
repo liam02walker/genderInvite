@@ -6,6 +6,7 @@ import Details from "./Pages/Details";
 
 export default function App() {
   const [myClick, setMyClick] = useState(false);
+  const [complete, setComplete] = useState(false);
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
@@ -17,5 +18,14 @@ export default function App() {
     const res = await axios.get(API);
     setUsers(res.data);
   }
-  return <>{myClick ? <Home users={users} setUsers={setUsers} /> : <Details setMyClick={setMyClick} myClick={myClick} />}</>;
+
+  if (complete) {
+    return (
+      <div>
+        <h1>THANK YOU</h1>
+      </div>
+    );
+  }
+
+  return <>{myClick ? <Home setComplete={setComplete} users={users} setUsers={setUsers} /> : <Details setMyClick={setMyClick} myClick={myClick} />}</>;
 }
