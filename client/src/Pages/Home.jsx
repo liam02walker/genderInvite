@@ -38,7 +38,7 @@ export default function Home({ users, setUsers, setComplete }) {
 
   return (
     <>
-      <form className="formContainer" onSubmit={addUser} onTouchStart={addUser}>
+      <form className="formContainer" onSubmit={addUser}>
         <div className="inputName">
           <h2>What is your name?</h2>
           <input value={formData.Name} required name="Name" placeholder="Full Name" onChange={handleFormData} />
@@ -55,7 +55,7 @@ export default function Home({ users, setUsers, setComplete }) {
             <input className="girlButton" type="button" name="Vote" value="Girl" onClick={handleFormData} />
           </div>
         </div>
-        <button className="submitButton" type="submit">
+        <button onTouchStart={addUser} className="submitButton" type="submit">
           Submit
         </button>
       </form>
