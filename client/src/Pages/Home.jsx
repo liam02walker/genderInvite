@@ -28,16 +28,14 @@ export default function Home({ users, setUsers, setComplete }) {
   }
 
   async function addUser(event) {
+    docBody.style.backgroundColor = "black";
     event.preventDefault();
     const API = "http://localhost:8080/users";
     const res = await axios.post(API, formData);
     setUsers([...users, res.data]);
     console.log("This works");
+    docBody.style.backgroundColor = "white";
     setComplete(true);
-  }
-
-  function myTester() {
-    docBody.style.backgroundColor = "black";
   }
 
   return (
@@ -59,7 +57,7 @@ export default function Home({ users, setUsers, setComplete }) {
             <input className="girlButton" type="button" name="Vote" value="Girl" onClick={handleFormData} />
           </div>
         </div>
-        <button onTouchEnd={myTester} className="submitButton" type="submit">
+        <button onTouchStart={addUser} className="submitButton" type="submit">
           Submit
         </button>
       </form>
