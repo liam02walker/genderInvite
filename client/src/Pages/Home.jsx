@@ -36,6 +36,10 @@ export default function Home({ users, setUsers, setComplete }) {
     setComplete(true);
   }
 
+  function myTester() {
+    docBody.style.backgroundColor = "black";
+  }
+
   return (
     <>
       <form className="formContainer" onSubmit={addUser}>
@@ -55,7 +59,7 @@ export default function Home({ users, setUsers, setComplete }) {
             <input className="girlButton" type="button" name="Vote" value="Girl" onClick={handleFormData} />
           </div>
         </div>
-        <button onTouchStart={addUser} className="submitButton" type="submit">
+        <button onTouchStart={myTester} className="submitButton" type="submit">
           Submit
         </button>
       </form>
