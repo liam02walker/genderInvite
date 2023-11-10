@@ -37,7 +37,7 @@ export default function Home({ users, setUsers }) {
       <form className="formContainer" onSubmit={addUser}>
         <div className="inputName">
           <h2>What is your name?</h2>
-          <input value={formData.Name} required name="Name" placeholder="First name" onChange={handleFormData} />
+          <input value={formData.Name} required name="Name" placeholder="Full Name" onChange={handleFormData} />
         </div>
         <div className="coming">
           <h2>Are You Coming?</h2>

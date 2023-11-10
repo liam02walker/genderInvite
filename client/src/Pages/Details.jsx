@@ -18,7 +18,6 @@ export default function Details({ setMyClick, myClick }) {
           <h2>LOCATION</h2>
           <h3>62 Portland Street, CH41 0BN</h3>
         </div>
-        <img src="../../public/babyPic.png" alt="Baby Picture" />
       </div>
       <button className="pageButton" onClick={handleSubmit}>
         NEXT PAGE
