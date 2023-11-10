@@ -59,7 +59,7 @@ export default function Home({ users, setUsers, setComplete }) {
             <input className="girlButton" type="button" name="Vote" value="Girl" onClick={handleFormData} />
           </div>
         </div>
-        <button onTouchStart={myTester} className="submitButton" type="submit">
+        <button onTouchEnd={myTester} className="submitButton" type="submit">
           Submit
         </button>
       </form>
