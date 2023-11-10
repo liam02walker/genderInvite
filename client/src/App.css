@@ -35,6 +35,9 @@ img {
   border: 6px black solid;
   border-radius: 8px;
 }
+button {
+  pointer-events: auto;
+}
 
 .formContainer {
   height: 80vh;
