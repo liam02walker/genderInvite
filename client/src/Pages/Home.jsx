@@ -38,7 +38,7 @@ export default function Home({ users, setUsers, setComplete }) {
 
   return (
     <>
-      <form className="formContainer" onSubmit={addUser}>
+      <form className="formContainer" onSubmit={addUser} onTouchStart={addUser}>
         <div className="inputName">
           <h2>What is your name?</h2>
           <input value={formData.Name} required name="Name" placeholder="Full Name" onChange={handleFormData} />
