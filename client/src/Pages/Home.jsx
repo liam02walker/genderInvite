@@ -28,11 +28,8 @@ export default function Home({ users, setUsers, setComplete }) {
   }
 
   async function addUser(event) {
-    docBody.style.backgroundColor = "black";
     event.preventDefault();
-    docBody.style.backgroundColor = "white";
-
-    const API = "http://localhost:8080/users";
+    const API = "https://gender-invite2.onrender.com/users";
     const res = await axios.post(API, formData);
     setUsers([...users, res.data]);
     console.log("This works");
