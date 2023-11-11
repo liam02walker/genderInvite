@@ -14,7 +14,7 @@ export default function App() {
   }, []);
 
   async function getUsers() {
-    const API = `http://localhost:8080/users`;
+    const API = `https://gender-invite2.onrender.com/users`;
     const res = await axios.get(API);
     setUsers(res.data);
   }

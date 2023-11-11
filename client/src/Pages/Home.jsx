@@ -35,7 +35,14 @@ export default function Home({ users, setUsers, setComplete }) {
     console.log("This works");
     setComplete(true);
   }
-  if (res.data) {
+
+  if (users.Name) {
+    console.log("Hello");
+  } else {
+    console.log("Bye");
+  }
+
+  if (users.Name) {
     return (
       <>
         <form className="formContainer" onSubmit={addUser}>
@@ -62,11 +69,4 @@ export default function Home({ users, setUsers, setComplete }) {
       </>
     );
   }
-  return (
-    <div>
-      <h1>LOADING...</h1>
-      <p>If server hasn't ran in a while, this may take a while.</p>
-      <p>Go make a coffee whilst it loads :D</p>
-    </div>
-  );
 }
