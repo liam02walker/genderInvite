@@ -35,30 +35,38 @@ export default function Home({ users, setUsers, setComplete }) {
     console.log("This works");
     setComplete(true);
   }
-
-  return (
-    <>
-      <form className="formContainer" onSubmit={addUser}>
-        <div className="inputName">
-          <h2>What is your name?</h2>
-          <input value={formData.Name} required name="Name" placeholder="Full Name" onChange={handleFormData} />
-        </div>
-        <div className="coming">
-          <h2>Are You Coming?</h2>
-          <input type="checkbox" name="Attending" onChange={handleFormData} />
-        </div>
-        <div className="gender">
-          <h2>Guess The Gender</h2>
-          <div className="genderButton">
-            <input className="boyButton" type="button" name="Vote" value="Boy" onClick={handleFormData} />
-            <div className="emptyDiv"></div>
-            <input className="girlButton" type="button" name="Vote" value="Girl" onClick={handleFormData} />
+  if (res.data) {
+    return (
+      <>
+        <form className="formContainer" onSubmit={addUser}>
+          <div className="inputName">
+            <h2>What is your name?</h2>
+            <input value={formData.Name} required name="Name" placeholder="Full Name" onChange={handleFormData} />
           </div>
-        </div>
-        <button className="submitButton" type="submit">
-          Submit
-        </button>
-      </form>
-    </>
+          <div className="coming">
+            <h2>Are You Coming?</h2>
+            <input type="checkbox" name="Attending" onChange={handleFormData} />
+          </div>
+          <div className="gender">
+            <h2>Guess The Gender</h2>
+            <div className="genderButton">
+              <input className="boyButton" type="button" name="Vote" value="Boy" onClick={handleFormData} />
+              <div className="emptyDiv"></div>
+              <input className="girlButton" type="button" name="Vote" value="Girl" onClick={handleFormData} />
+            </div>
+          </div>
+          <button className="submitButton" type="submit">
+            Submit
+          </button>
+        </form>
+      </>
+    );
+  }
+  return (
+    <div>
+      <h1>LOADING...</h1>
+      <p>If server hasn't ran in a while, this may take a while.</p>
+      <p>Go make a coffee whilst it loads :D</p>
+    </div>
   );
 }
